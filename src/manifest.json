@@ -1,0 +1,13 @@
+{
+  "name": "屏蔽知乎视频",
+  "description": "屏蔽知乎上烦人的视频",
+  "version": "1.0",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "js": [ "jquery-1.8.3.min.js", "filterMv.js" ],
+      "matches": [ "https://*.zhihu.com/" ],
+      "run_at": "document_end"
+    }
+  ]
+}
