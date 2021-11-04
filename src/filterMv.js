@@ -6,12 +6,15 @@ jQuery(function () {
 window.setInterval("filterMv()", 1000);
 
 function filterMv() {
-    //debugger;
     var items = jQuery("div[role=list] .Card");
     jQuery.each(items, function (index, item) {
         var jqObj = jQuery(item);
-        if (jqObj.find("iframe").length > 0) {
-            jqObj.remove();
+        if (isNeedFilter(jqObj)) {
+            jqObj.hide();
         }
     });
 };
+
+function isNeedFilter(jqObj){
+	return jqObj.find("iframe").length > 0 || jqObj.hasClass("TopstoryItem--advertCard");
+}
